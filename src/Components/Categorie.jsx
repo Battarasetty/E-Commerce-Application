@@ -7,7 +7,7 @@ const Categorie = () => {
         <div className='flex p-5 justify-between'>
             {
                 categories.map((item) => (
-                    <CategorieItem item={item} />
+                    <CategorieItem item={item} key={item.id} />
                 ))
             }
         </div>

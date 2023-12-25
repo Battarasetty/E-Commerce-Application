@@ -4,6 +4,7 @@ import Annoucement from '../Components/Annoucement'
 import Marquee from "react-fast-marquee";
 import Slider from '../Components/Slider';
 import Categorie from '../Components/Categorie';
+import Products from '../Components/Products';
 
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
             <Navbar />
             <Slider />
             <Categorie />
+            <Products />
         </div>
     )
 }
