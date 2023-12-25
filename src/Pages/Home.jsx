@@ -3,7 +3,7 @@ import Navbar from '../Components/Navbar'
 import Annoucement from '../Components/Annoucement'
 import Marquee from "react-fast-marquee";
 import Slider from '../Components/Slider';
-import Categories from '../Components/Categories';
+import Categorie from '../Components/Categorie';
 
 
 const Home = () => {
@@ -14,7 +14,7 @@ const Home = () => {
             </Marquee>
             <Navbar />
             <Slider />
-            <Categories />
+            <Categorie />
         </div>
     )
 }

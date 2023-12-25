@@ -1,10 +1,10 @@
 import React from 'react'
 import { categories } from '../data'
-import CategorieItem from './CategorieItem'
+import CategorieItem from './categorieItem'
 
-const Categories = () => {
+const Categorie = () => {
     return (
-        <div>
+        <div className='flex p-5 justify-between'>
             {
                 categories.map((item) => (
                     <CategorieItem item={item} />
@@ -14,4 +14,4 @@ const Categories = () => {
     )
 }
 
-export default Categories
+export default Categorie
