@@ -5,6 +5,8 @@ import Marquee from "react-fast-marquee";
 import Slider from '../Components/Slider';
 import Categorie from '../Components/Categorie';
 import Products from '../Components/Products';
+import NewsLetter from '../Components/NewsLetter';
+import Footer from '../Components/Footer';
 
 
 const Home = () => {
@@ -17,6 +19,8 @@ const Home = () => {
             <Slider />
             <Categorie />
             <Products />
+            <NewsLetter />
+            <Footer />
         </div>
     )
 }
