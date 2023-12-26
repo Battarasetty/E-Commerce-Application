@@ -1,12 +1,12 @@
 import React from 'react'
-import Navbar from '../Components/Navbar'
-import Annoucement from '../Components/Annoucement'
+import Navbar from '../components/Navbar'
+import Annoucement from '../components/Announcement'
 import Marquee from "react-fast-marquee";
-import Slider from '../Components/Slider';
-import Categorie from '../Components/Categorie';
-import Products from '../Components/Products';
-import NewsLetter from '../Components/NewsLetter';
-import Footer from '../Components/Footer';
+import Slider from '../components/Slider';
+import Categorie from '../components/Categorie';
+import Products from '../components/Products';
+import NewsLetter from '../components/NewsLetter';
+import Footer from '../components/Footer';
 
 
 const Home = () => {

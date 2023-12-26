@@ -1,17 +1,24 @@
-import React from 'react'
-import { categories } from '../data'
-import CategorieItem from './categorieItem'
+import styled from "styled-components";
+import { categories } from "../data";
+import { mobile } from "../responsive";
+import CategoryItem from "./CategoryItem";
 
-const Categorie = () => {
+const Container = styled.div`
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  ${mobile({ padding: "0px", flexDirection: "column" })}
+
+`;
+
+const Categories = () => {
     return (
-        <div className='flex p-5 justify-between'>
-            {
-                categories.map((item) => (
-                    <CategorieItem item={item} key={item.id} />
-                ))
-            }
-        </div>
-    )
-}
+        <Container>
+            {categories.map((item) => (
+                <CategoryItem item={item} key={item.id} />
+            ))}
+        </Container>
+    );
+};
 
-export default Categorie
+export default Categories;

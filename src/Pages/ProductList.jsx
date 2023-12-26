@@ -1,70 +1,89 @@
-import React, { useState } from 'react'
-import Navbar from '../Components/Navbar';
-import Footer from '../Components/Footer';
-import Annoucement from '../Components/Annoucement';
-import Marquee from 'react-fast-marquee';
-import Products from '../Components/Products';
-import NewsLetter from '../Components/NewsLetter';
+import styled from "styled-components";
+import Navbar from "../components/Navbar";
+import Announcement from "../components/Announcement";
+import Products from "../components/Products";
+import NewsLetter from "../components/NewsLetter";
+import Footer from "../components/Footer";
+import { mobile } from "../responsive";
+import Marquee from "react-fast-marquee";
+
+const Container = styled.div``;
+
+const Title = styled.h1`
+  margin: 20px;
+`;
+
+const FilterContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const Filter = styled.div`
+  margin: 20px;
+  ${mobile({ width: "0px 20px", display: "flex", flexDirection: "column" })}
+`;
+
+const FilterText = styled.span`
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: 20px;
+  ${mobile({ marginRight: "0px" })}
+`;
+
+const Select = styled.select`
+  padding: 10px;
+  margin-right: 20px;
+  ${mobile({ margin: "10px 0px" })}
+`;
+const Option = styled.option``;
 
 const ProductList = () => {
-    const [selectedColor, setSelectedColor] = useState('');
-    const [size, setSize] = useState('')
-
-    const handleColorChange = (event) => {
-        setSelectedColor(event.target.value);
-    };
-    const handleSizeChange = () => {
-        setSize(e.target.value)
-    }
-
     return (
-        <div>
+        <Container>
             <Marquee speed={50} gradient={false} pauseOnHover="true" pauseOnClick="true" autoFill="true">
-                <Annoucement />
+                <Announcement />
             </Marquee>
             <Navbar />
-            <h1 className='m-5'>Dresses</h1>
-            <div className='flex justify-between m-5'>
-                <div className=''>
-                    <span className='text-lg font-bold mr-5'>
-                        Filter Products
-                    </span>
-                    <select value={selectedColor} onChange={handleColorChange} className='p-2 mr-5 border'>
-                        <option disabled value="">
+            <Title>Dresses</Title>
+            <FilterContainer>
+                <Filter>
+                    <FilterText>Filter Products:</FilterText>
+                    <Select>
+                        <Option disabled selected>
                             Color
-                        </option>
-                        <option value="white">White</option>
-                        <option value="black">Black</option>
-                        <option value="red">Red</option>
-                        <option value="blue">Blue</option>
-                        <option value="yellow">Yellow</option>
-                        <option value="green">Green</option>
-                    </select>
-                    <select onChange={handleSizeChange} className='p-2 mr-5 border'>
-                        <option>Size</option>
-                        <option>XS</option>
-                        <option>S</option>
-                        <option>M</option>
-                        <option>L</option>
-                        <option>XL</option>
-                    </select>
-                </div>
-                <div className=''>
-                    <span className='text-lg font-bold mr-5'>
-                        Sort Products
-                    </span>
-                    <select className='p-2 mr-5 border'>
-                        <option>Newest</option>
-                        <option>Price (asc)</option>
-                        <option>Price (desc)</option>
-                    </select>
-                </div>
-            </div>
+                        </Option>
+                        <Option>White</Option>
+                        <Option>Black</Option>
+                        <Option>Red</Option>
+                        <Option>Blue</Option>
+                        <Option>Yellow</Option>
+                        <Option>Green</Option>
+                    </Select>
+                    <Select>
+                        <Option disabled selected>
+                            Size
+                        </Option>
+                        <Option>XS</Option>
+                        <Option>S</Option>
+                        <Option>M</Option>
+                        <Option>L</Option>
+                        <Option>XL</Option>
+                    </Select>
+                </Filter>
+                <Filter>
+                    <FilterText>Sort Products:</FilterText>
+                    <Select>
+                        <Option selected>Newest</Option>
+                        <Option>Price (asc)</Option>
+                        <Option>Price (desc)</Option>
+                    </Select>
+                </Filter>
+            </FilterContainer>
             <Products />
             <NewsLetter />
             <Footer />
-        </div>
-    )
-}
+        </Container>
+    );
+};
 
-export default ProductList
+export default ProductList;

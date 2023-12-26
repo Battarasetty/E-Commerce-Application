@@ -1,7 +1,9 @@
-import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+import { FaArrowCircleLeft } from "react-icons/fa";
+import { FaArrowCircleRight } from "react-icons/fa";
 import { useState } from "react";
 import styled from "styled-components";
 import { sliderItems } from "../data";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   width: 100%;
@@ -9,6 +11,7 @@ const Container = styled.div`
   display: flex;
   position: relative;
   overflow: hidden;
+  ${mobile({ display: "none" })}
 `;
 
 const Arrow = styled.div`
@@ -90,7 +93,7 @@ const Slider = () => {
   return (
     <Container>
       <Arrow direction="left" onClick={() => handleClick("left")}>
-        <FaArrowLeft />
+        <FaArrowCircleLeft />
       </Arrow>
       <Wrapper slideindex={slideindex}>
         {sliderItems.map((item) => (
@@ -101,13 +104,13 @@ const Slider = () => {
             <InfoContainer>
               <Title>{item.title}</Title>
               <Desc>{item.desc}</Desc>
-              <Button style={{ border: "1px solid red" }}>SHOW NOW</Button>
+              <Button>SHOW NOW</Button>
             </InfoContainer>
           </Slide>
         ))}
       </Wrapper>
       <Arrow direction="right" onClick={() => handleClick("right")}>
-        <FaArrowRight />
+        <FaArrowCircleRight />
       </Arrow>
     </Container>
   );

@@ -1,8 +1,9 @@
 import styled from "styled-components";
-import Annoucement from "../Components/Annoucement";
-import Footer from "../Components/Footer";
-import Navbar from "../Components/Navbar";
-import NewsLetter from "../Components/NewsLetter";
+import Announcement from "../components/Announcement";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
+import NewsLetter from "../components/NewsLetter";
+import { mobile } from "../responsive";
 import { IoMdAddCircle } from "react-icons/io";
 import { IoIosRemoveCircle } from "react-icons/io";
 import Marquee from "react-fast-marquee";
@@ -13,6 +14,7 @@ const Container = styled.div``;
 const Wrapper = styled.div`
   padding: 50px;
   display: flex;
+  ${mobile({ padding: "10px", flexDirection: "column" })}
 `;
 
 const ImgContainer = styled.div`
@@ -23,11 +25,13 @@ const Image = styled.img`
   width: 100%;
   height: 90vh;
   object-fit: cover;
+  ${mobile({ height: "40vh" })}
 `;
 
 const InfoContainer = styled.div`
   flex: 1;
   padding: 0px 50px;
+  ${mobile({ padding: "10px" })}
 `;
 
 const Title = styled.h1`
@@ -48,6 +52,7 @@ const FilterContainer = styled.div`
   margin: 30px 0px;
   display: flex;
   justify-content: space-between;
+  ${mobile({ width: "100%" })}
 `;
 
 const Filter = styled.div`
@@ -81,6 +86,7 @@ const AddContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  ${mobile({ width: "100%" })}
 `;
 
 const AmountContainer = styled.div`
@@ -113,58 +119,58 @@ const Button = styled.button`
 `;
 
 const Product = () => {
-    return (
-        <Container>
-            <Marquee speed={50} gradient={false} pauseOnHover="true" pauseOnClick="true" autoFill="true">
-                <Annoucement />
-            </Marquee>
-            <Navbar />
-            <Wrapper>
-                <ImgContainer>
-                    <Image src="https://i.ibb.co/S6qMxwr/jean.jpg" />
-                </ImgContainer>
-                <InfoContainer>
-                    <Title>Denim Jumpsuit</Title>
-                    <Desc>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                        venenatis, dolor in finibus malesuada, lectus ipsum porta nunc, at
-                        iaculis arcu nisi sed mauris. Nulla fermentum vestibulum ex, eget
-                        tristique tortor pretium ut. Curabitur elit justo, consequat id
-                        condimentum ac, volutpat ornare.
-                    </Desc>
-                    <Price>$ 20</Price>
-                    <FilterContainer>
-                        <Filter>
-                            <FilterTitle>Color</FilterTitle>
-                            <FilterColor color="black" />
-                            <FilterColor color="darkblue" />
-                            <FilterColor color="gray" />
-                        </Filter>
-                        <Filter>
-                            <FilterTitle>Size</FilterTitle>
-                            <FilterSize>
-                                <FilterSizeOption>XS</FilterSizeOption>
-                                <FilterSizeOption>S</FilterSizeOption>
-                                <FilterSizeOption>M</FilterSizeOption>
-                                <FilterSizeOption>L</FilterSizeOption>
-                                <FilterSizeOption>XL</FilterSizeOption>
-                            </FilterSize>
-                        </Filter>
-                    </FilterContainer>
-                    <AddContainer>
-                        <AmountContainer>
-                            <IoIosRemoveCircle />
-                            <Amount>1</Amount>
-                            <IoMdAddCircle />
-                        </AmountContainer>
-                        <Button>ADD TO CART</Button>
-                    </AddContainer>
-                </InfoContainer>
-            </Wrapper>
-            <NewsLetter />
-            <Footer />
-        </Container>
-    );
+  return (
+    <Container>
+      <Marquee speed={50} gradient={false} pauseOnHover="true" pauseOnClick="true" autoFill="true">
+        <Announcement />
+      </Marquee>
+      <Navbar />
+      <Wrapper>
+        <ImgContainer>
+          <Image src="https://i.ibb.co/S6qMxwr/jean.jpg" />
+        </ImgContainer>
+        <InfoContainer>
+          <Title>Denim Jumpsuit</Title>
+          <Desc>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+            venenatis, dolor in finibus malesuada, lectus ipsum porta nunc, at
+            iaculis arcu nisi sed mauris. Nulla fermentum vestibulum ex, eget
+            tristique tortor pretium ut. Curabitur elit justo, consequat id
+            condimentum ac, volutpat ornare.
+          </Desc>
+          <Price>$ 20</Price>
+          <FilterContainer>
+            <Filter>
+              <FilterTitle>Color</FilterTitle>
+              <FilterColor color="black" />
+              <FilterColor color="darkblue" />
+              <FilterColor color="gray" />
+            </Filter>
+            <Filter>
+              <FilterTitle>Size</FilterTitle>
+              <FilterSize>
+                <FilterSizeOption>XS</FilterSizeOption>
+                <FilterSizeOption>S</FilterSizeOption>
+                <FilterSizeOption>M</FilterSizeOption>
+                <FilterSizeOption>L</FilterSizeOption>
+                <FilterSizeOption>XL</FilterSizeOption>
+              </FilterSize>
+            </Filter>
+          </FilterContainer>
+          <AddContainer>
+            <AmountContainer>
+              <IoIosRemoveCircle />
+              <Amount>1</Amount>
+              <IoMdAddCircle />
+            </AmountContainer>
+            <Button>ADD TO CART</Button>
+          </AddContainer>
+        </InfoContainer>
+      </Wrapper>
+      <NewsLetter />
+      <Footer />
+    </Container>
+  );
 };
 
 export default Product;

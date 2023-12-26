@@ -1,85 +1,142 @@
-import React from 'react'
 import { FaFacebookSquare } from "react-icons/fa";
-import { FaSquareInstagram } from "react-icons/fa6";
-import { FaPinterest } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa6";
+import { FaInstagramSquare } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { FaPhoneSquareAlt } from "react-icons/fa";
+import { FaPinterest } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
+import { FaTwitter } from "react-icons/fa";
+import styled from "styled-components";
+import { mobile } from "../responsive";
 
+const Container = styled.div`
+    display: flex;
+    ${mobile({ flexDirection: "column" })}
+  `;
 
+const Left = styled.div`
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  `;
+
+const Logo = styled.h1``;
+
+const Desc = styled.p`
+    margin: 20px 0px;
+  `;
+
+const SocialContainer = styled.div`
+    display: flex;
+  `;
+
+const SocialIcon = styled.div`
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: white;
+    background-color: #${(props) => props.color};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+  `;
+
+const Center = styled.div`
+    flex: 1;
+    padding: 20px;
+    ${mobile({ display: "none" })}
+  `;
+
+const Title = styled.h3`
+    margin-bottom: 30px;
+  `;
+
+const List = styled.ul`
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+  `;
+
+const ListItem = styled.li`
+    width: 50%;
+    margin-bottom: 10px;
+  `;
+
+const Right = styled.div`
+    flex: 1;
+    padding: 20px;
+    ${mobile({ backgroundColor: "#fff8f8" })}
+  
+  `;
+
+const ContactItem = styled.div`
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+  `;
+
+const Payment = styled.img`
+      width: 50%;
+  `;
 
 const Footer = () => {
     return (
-        <div className='flex'>
-            <div className='flex-1 flex flex-col p-5 '>
-                <h1 className=''>Groceri Store</h1>
-                <p className='my-5'>There are many variations of passages of Lorem Ipsum available, but
+        <Container>
+            <Left>
+                <Logo>LAMA.</Logo>
+                <Desc>
+                    There are many variations of passages of Lorem Ipsum available, but
                     the majority have suffered alteration in some form, by injected
                     humour, or randomised words which don’t look even slightly believable.
-                </p>
-                <div className='flex'>
-                    <div className='w-10 h-10 rounded-full flex items-center justify-center text-white m-5' style={{ backgroundColor: '#3B5999' }}>
+                </Desc>
+                <SocialContainer>
+                    <SocialIcon color="3B5999">
                         <FaFacebookSquare />
-                    </div>
-                    <div className='w-10 h-10 rounded-full flex items-center justify-center text-white m-5' style={{ backgroundColor: '#E4405F' }}>
-                        <FaSquareInstagram />
-                    </div>
-                    <div className='w-10 h-10 rounded-full flex items-center justify-center text-white m-5' style={{ backgroundColor: '#55ACEE' }}>
+                    </SocialIcon>
+                    <SocialIcon color="E4405F">
+                        <FaInstagramSquare />
+                    </SocialIcon>
+                    <SocialIcon color="55ACEE">
+                        <FaTwitter />
+                    </SocialIcon>
+                    <SocialIcon color="E60023">
                         <FaPinterest />
-                    </div>
-                    <div className='w-10 h-10 rounded-full flex items-center justify-center text-white m-5' style={{ backgroundColor: '#E60023' }}>
-                        <FaGithub />
-                    </div>
-                </div>
-            </div>
-            <div className='flex-1 p-5 '>
-                <h3 className='mb-6'>Useful Links</h3>
-                <ul className='m-0 p-0 flex flex-wrap'>
-                    <li className='mb-3' style={{ width: "50%" }}>
-                        Home
-                    </li>
-                    <li className='mb-3' style={{ width: "50%" }}>
-                        Cart
-                    </li>
-                    <li className='mb-3' style={{ width: "50%" }}>
-                        Man Fashion
-                    </li>
-                    <li className='mb-3' style={{ width: "50%" }}>
-                        Woman Fashion
-                    </li>
-                    <li className='mb-3' style={{ width: "50%" }}>
-                        Accessories
-                    </li>
-                    <li className='mb-3' style={{ width: "50%" }}>
-                        MyAccount
-                    </li>
-                    <li className='mb-3' style={{ width: "50%" }}>
-                        Order Tracking
-                    </li>
-                    <li className='mb-3' style={{ width: "50%" }}>
-                        Terms
-                    </li>
-                </ul>
-            </div>
-            <div className='flex-1 p-5'>
-                <h1 className=''>Contact</h1>
-                <div className='mb-5 flex items-center'>
-                    <FaLocationDot style={{ marginRight: "10px" }} />
-                    BHEL, 24-63, R.C Puram, Hyderabad-32
-                </div>
-                <div className='mb-5 flex items-center' >
-                    <FaPhoneSquareAlt style={{ marginRight: "10px" }} />
-                    +91-8639733568
-                </div>
-                <div className='mb-5 flex items-center' >
-                    <IoMdMail style={{ marginRight: "10px" }} />
-                    HarishBattarasetty@gmail.com
-                </div>
-                <img src="https://i.ibb.co/Qfvn4z6/payment.png" alt="Payment" className='w-full' />
-            </div>
-        </div>
-    )
-}
+                    </SocialIcon>
+                </SocialContainer>
+            </Left>
+            <Center>
+                <Title>Useful Links</Title>
+                <List>
+                    <ListItem>Home</ListItem>
+                    <ListItem>Cart</ListItem>
+                    <ListItem>Man Fashion</ListItem>
+                    <ListItem>Woman Fashion</ListItem>
+                    <ListItem>Accessories</ListItem>
+                    <ListItem>My Account</ListItem>
+                    <ListItem>Order Tracking</ListItem>
+                    <ListItem>Wishlist</ListItem>
+                    <ListItem>Wishlist</ListItem>
+                    <ListItem>Terms</ListItem>
+                </List>
+            </Center>
+            <Right>
+                <Title>Contact</Title>
+                <ContactItem>
+                    <FaLocationDot style={{ marginRight: "10px" }} /> 622 Dixie Path , South Tobinchester 98336
+                </ContactItem>
+                <ContactItem>
+                    <FaPhoneSquareAlt style={{ marginRight: "10px" }} /> +1 234 56 78
+                </ContactItem>
+                <ContactItem>
+                    <IoMdMail style={{ marginRight: "10px" }} /> contact@lama.dev
+                </ContactItem>
+                <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
+            </Right>
+        </Container>
+    );
+};
 
-export default Footer
+export default Footer;
